@@ -14,10 +14,10 @@
  
  #include <stdio.h>
  
- void insertion_sort(int *sequence)
+ void insertion_sort(int *sequence, int num)
  {
 	int i, j, key;
-	for (j = 1; j < sizeof(sequence); j++){
+	for (j = 1; j < num; j++){
 		key = sequence[j];
 		i = j -1;
 		
@@ -31,10 +31,11 @@
  
  int main(char argv, char **argc)
  {
-	int a[] = {5, 2, 4, 6, 1, 3};
+	int i;
+	int a[8] = {5, 2, 4, 6, 1, 3, 12, 20};
+
+	insertion_sort(a, 8);
 	
-	insertion_sort(a);
-	
-	for (i = 0; i < sizeof(a); i++)
+	for (i = 0; i < 8; i++)
 		printf("a[%d] = %d\n", i, a[i]);
  }
